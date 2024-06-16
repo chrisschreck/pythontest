@@ -1,0 +1,57 @@
+.element {
+    box-shadow: 7px 7px 22px #676767, -7px -7px 22px #ffffff;
+    -moz-box-shadow: 7px 7px 22px #676767, -7px -7px 22px #ffffff;
+    -webkit-box-shadow: 7px 7px 22px #676767, -7px -7px 22px #ffffff;
+}
+
+.table {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(241, 241, 241);
+    border-radius: 1.8em;
+    padding: 0.5em;
+}
+
+.table table {
+    border-collapse: collapse;
+}
+
+.table thead {
+    color: #7e7e7e;
+}
+
+.table tbody tr {
+    border-bottom: 1px solid gray;
+}
+
+.table tbody tr:last-child {
+    border-bottom: 0;
+}
+
+
+.table td, .table th {
+    padding: 0.5em;
+    text-align: left;
+}
+
+.table th {
+    background: #dadada;
+}
+
+.table th:first-child {
+    border-radius: 1.8em 0 0 1.8em;
+}
+
+.table th:last-child {
+    border-radius: 0 1.8em 1.8em 0;
+}
+
+.tableheader {
+    padding-left: 0.5em;
+    margin-bottom: 0;
+}
+.doctorheader {
+    padding-left: 0.5em;
+    margin: 0em;
+}

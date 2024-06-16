@@ -1,0 +1,21 @@
+{% extends 'app_base.html' %}
+{% from 'macros/table.html' import table with context %}
+{% block title %}| Meine Ärzte{% endblock %}
+
+{% block app %}
+    <div class="header element" style="background-image: url({{ url_for('static', filename='images/bg_docportal_low_quality.jpg') }});">
+        <h1>Guten Tag, {{user}}👋</h1>
+        <p>Bitte abbonieren sie einer Klinik um Termine zu machen</p>
+    </div>
+    <div class="row">
+            {{ table("Meine Mediakmente", ["Name", "Arzt", "Einnahme", "Auswahl"], [
+                    ["Medikament 1", "Dr. Markus Schneider", "3x täglich", {"input": "radio", "name": "med", "value": "1"}],
+                    ["Medikament 2", "Dr. Markus Schneider", "3x täglich", {"input": "radio", "name": "med", "value": "2"}],
+                    ["Medikament 3", "Dr. Markus Schneider", "3x täglich", {"input": "radio", "name": "med", "value": "3"}],
+                    ["Medikament 4", "Dr. Markus Schneider", "3x täglich", {"input": "radio", "name": "med", "value": "4"}],
+                    ["Medikament 5", "Dr. Markus Schneider", "3x täglich", {"input": "radio", "name": "med", "value": "5"}],
+                    ]
+                )}}
+    </div>
+
+{% endblock %}

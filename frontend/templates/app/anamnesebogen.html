@@ -1,0 +1,175 @@
+{% extends 'app_base.html' %}
+{% block title %}| Meine Ärzte{% endblock %}
+
+{% block app %}
+<div class="row">
+    <div class="content_box element">
+        <h3 class="tableheader">Anamnesebogen</h3><hr>
+        <form action="submit_amnesebogen.php" method="post">
+            <!-- Allgemeine Angaben -->
+            <fieldset>
+              <legend>Allgemeine Angaben</legend>
+
+              <label for="name">Nachname:</label>
+              <input type="text" id="lastname" name="lastname" required><br>
+
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" required><br>
+
+                <label for="geschlecht">Geschlecht:</label>
+              <select id="geschlecht" name="geschlecht" required>
+                <option value="">Bitte wählen</option>
+                <option value="männlich">Männlich</option>
+                <option value="weiblich">Weiblich</option>
+                <option value="divers">Divers</option>
+              </select><br>
+
+              <label for="alter">Geburtsdatum:</label>
+              <input type="date" id="dateofbiirth" name="dateofbiirth" required><br>
+
+                </fieldset>
+              <fieldset>
+              <legend>Adresse</legend>
+
+              <label for="strasse">Straße:</label>
+              <input type="text" id="strasse" name="strasse" required><br>
+
+              <label for="plz">PLZ:</label>
+              <input type="text" id="plz" name="plz" required><br>
+
+              <label for="ort">Ort:</label>
+              <input type="text" id="ort" name="ort" required><br>
+
+              <!-- Weitere Adresse Inputs hier einfügen -->
+
+              </fieldset>
+              <fieldset>
+              <legend>Kontaktdaten</legend>
+
+              <label for="telefon">Telefon:</label>
+              <input type="tel" id="telefon" name="telefon" required><br>
+
+              <label for="email">E-Mail:</label>
+              <input type="email" id="email" name="email" required><br>
+
+
+
+              <!-- Weitere Felder für Anschrift, Telefonnummer, E-Mail usw. -->
+
+            </fieldset>
+
+            <!-- Aktuelle Beschwerden -->
+            <fieldset>
+              <legend>Aktuelle Beschwerden</legend>
+
+              <label for="beschwerden">Beschreiben Sie Ihre aktuellen Beschwerden:</label><br>
+              <textarea id="beschwerden" name="beschwerden" rows="4" cols="50" required></textarea><br>
+
+              <!-- Weitere Felder für Symptome, Dauer der Beschwerden, vorangegangene Behandlungen usw. -->
+
+            </fieldset>
+
+            <!-- Medizinische Vorgeschichte -->
+            <fieldset>
+              <legend>Medizinische Vorgeschichte</legend>
+
+              <label for="krankheiten">Vergangene Krankheiten:</label>
+              <textarea id="krankheiten" name="krankheiten" rows="4" cols="50" required></textarea><br>
+
+              <label for="verletzungen">Verletzungen:</label>
+              <textarea id="verletzungen" name="verletzungen" rows="4" cols="50" required></textarea><br>
+
+              <label for="operationen">Operationen:</label>
+              <textarea id="operationen" name="operationen" rows="4" cols="50" required></textarea><br>
+
+            </fieldset>
+
+            <!-- Familienanamnese -->
+            <fieldset>
+              <legend>Familienanamnese</legend>
+
+              <label for="familienkrankheiten">Bekannte familiäre Krankheiten:</label>
+              <textarea id="familienkrankheiten" name="familienkrankheiten" rows="4" cols="50" required></textarea><br>
+
+              <label for="genetische_erkrankungen">Familiäre genetische Erkrankungen:</label>
+              <textarea id="genetische_erkrankungen" name="genetische_erkrankungen" rows="4" cols="50" required></textarea><br>
+
+              <label for="vor_erkrankungen">Vorerkrankungen von Verwandten:</label>
+              <textarea id="vor_erkrankungen" name="vor_erkrankungen" rows="4" cols="50" required></textarea><br>
+
+              <!-- Weitere Felder hier einfügen -->
+
+            </fieldset>
+
+            <!-- Sozialanamnese -->
+            <fieldset>
+              <legend>Sozialanamnese</legend>
+                <label for="beruf">Beruf:</label>
+                <input type="text" id="beruf" name="beruf">
+
+                <label for="familienstand">Familienstand:</label>
+                <select id="familienstand" name="familienstand">
+                  <option value="verheiratet">Verheiratet</option>
+                  <option value="geschieden">Geschieden</option>
+                  <option value="ledig">Ledig</option>
+                  <option value="verwitwet">Verwitwet</option>
+                </select>
+
+                <label for="wohnsituation">Wohnsituation:</label>
+                <input type="text" id="wohnsituation" name="wohnsituation">
+
+                <label for="wohnsituation">Trinken sie Alkohol:</label>
+                <input type="text" id="wohnsituation" name="wohnsituation">
+
+                <label for="wohnsituation">Rauchen sie, wenn ja wie viel:</label>
+                <input type="text" id="wohnsituation" name="wohnsituation">
+
+                <label for="wohnsituation">Nehmen sie Drogen:</label>
+                <input type="text" id="wohnsituation" name="wohnsituation">
+              <!-- Felder für Beruf, Lebensstil, Rauch- oder Alkoholkonsum, Drogenkonsum usw. -->
+
+            </fieldset>
+
+            <!-- Allergien und Medikamente -->
+            <fieldset>
+              <legend>Allergien und Medikamente</legend>
+                <label for="allergien">Allergien:</label>
+                <input type="text" id="allergien" name="allergien">
+
+                <label for="medikamente">Eingenommene Medikamente:</label>
+                <input type="text" id="medikamente" name="medikamente">
+              <!-- Felder für bekannte Allergien und aktuell eingenommene Medikamente -->
+
+            </fieldset>
+
+            <!-- Immunisierungsgeschichte -->
+            <fieldset>
+                <legend>Immunisierungsgeschichte</legend>
+                <label for="impfung1">Impfung 1:</label>
+                <input type="text" id="impfung1" name="impfung1">
+
+                <label for="impfung2">Impfung 2:</label>
+                <input type="text" id="impfung2" name="impfung2">
+              <!-- Felder für Impfungen, die der Patient erhalten hat -->
+
+            </fieldset>
+
+            <!-- Familiäre und soziale Unterstützung -->
+            <fieldset>
+                <legend>Familiäre und soziale Unterstützung</legend>
+                <label for="familie">Familie:</label>
+                <input type="text" id="familie" name="familie">
+
+                <label for="freunde">Freunde:</label>
+                <input type="text" id="freunde" name="freunde">
+              <!-- Felder für Familienmitglieder, Betreuer usw. -->
+
+            </fieldset>
+
+            <input type="submit" value="Anamnesebogen absenden">
+
+          </form>
+    </div>
+</div>
+{% endblock %}
+

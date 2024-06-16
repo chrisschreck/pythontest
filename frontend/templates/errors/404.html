@@ -1,0 +1,10 @@
+{% extends 'error_base.html' %}
+
+{% block title %}| Error 404{% endblock %}
+
+{% block content %}
+<div class="error">
+    <p>Wir konnten die Seite nicht finden.</p>
+    <a href="{{ url_for('index') }}">Zurück zur Startseite</a>
+</div>
+{% endblock %}

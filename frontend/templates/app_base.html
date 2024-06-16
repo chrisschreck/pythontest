@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% from "macros/sidebar.html" import sidebar with context %}
+{% from "macros/userheader.html" import userheader with context %}
+
+{% block title %}{% endblock %}
+
+{% block additionalHead %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/mydocs.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/table.css') }}">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script type="module" src="./index.js"></script>
+    <script src="https://kit.fontawesome.com/628a9ab23a.js" crossorigin="anonymous"></script>
+{% endblock %}
+
+{% block content %}
+<div class="wrapper">
+    {{ sidebar(role) }}
+    <div class="app">
+            {{ userheader() }}
+        <div class="view">
+            {% block app %}
+            {% endblock %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block additionalBody %}
+
+{% endblock %}

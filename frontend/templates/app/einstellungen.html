@@ -1,0 +1,62 @@
+{% extends 'app_base.html' %}
+
+{% block title %}| Einstellungen{% endblock %}
+
+{% block app %}
+    <h1>Einstellungen</h1>
+    <p>Hier können Sie Ihre Einstellungen anpassen.</p>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="flash-messages">
+                {% for message in messages %}
+                    <div class="flash-message">{{ message }}</div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <form action="{{ url_for('update_settings') }}" method="POST">
+        <label for="email">E-Mail:</label>
+        <input type="email" id="email" name="email" value="{{ current_user.email }}">
+
+        <label for="password">Passwort ändern:</label>
+        <input type="password" id="password" name="password" minlength="8">
+
+        <label for="confirm_password">Passwort bestätigen:</label>
+        <input type="password" id="confirm_password" name="confirm_password" minlength="8">
+
+        <label for="firstname">Vorname:</label>
+        <input type="text" id="firstname" name="firstname" value="{{ firstname }}">
+
+        <label for="lastname">Nachname:</label>
+        <input type="text" id="lastname" name="lastname" value="{{ lastname }}">
+
+        <label for="birthdate">Geburtsdatum:</label>
+        <input type="date" id="birthdate" name="birthdate" value="{{ birthdate }}">
+
+        <label for="sex">Geschlecht:</label>
+        <select id="sex" name="sex">
+            <option value="male" {% if sex == 'male' %}selected{% endif %}>Männlich</option>
+            <option value="female" {% if sex == 'female' %}selected{% endif %}>Weiblich</option>
+            <option value="non_binary" {% if sex == 'non_binary' %}selected{% endif %}>Nicht-binär</option>
+        </select>
+
+        <label for="title">Titel:</label>
+        <select id="title" name="title">
+            <option value="BLANC" {% if title == 0 %}selected{% endif %}>BLANC</option>
+            <option value="DOCTOR" {% if title == 1 %}selected{% endif %}>DOCTOR</option>
+            <option value="PROFESSOR" {% if title == 2 %}selected{% endif %}>PROFESSOR</option>
+            <option value="PROF_DOC" {% if title == 3 %}selected{% endif %}>PROF_DOC</option>
+            <option value="DIPLOMA" {% if title == 4 %}selected{% endif %}>DIPLOMA</option>
+            <option value="BACHELOR" {% if title == 5 %}selected{% endif %}>BACHELOR</option>
+            <option value="MASTER" {% if title == 6 %}selected{% endif %}>MASTER</option>
+            <option value="MAGISTER" {% if title == 7 %}selected{% endif %}>MAGISTER</option>
+        </select>
+
+        <label for="phone">Telefonnummer:</label>
+        <input type="tel" id="phone" name="phone" value="{{ current_user.phone }}">
+
+        <button type="submit">Einstellungen speichern</button>
+    </form>
+{% endblock %}

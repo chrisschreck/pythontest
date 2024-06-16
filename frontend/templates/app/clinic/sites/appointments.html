@@ -1,0 +1,38 @@
+{% extends 'app_base.html' %}
+{% from "macros/table.html" import table with context %}
+{% block title %}| Dashboard{% endblock %}
+
+{% block app %}
+<div class="header element" style="background-image: url({{ url_for('static', filename='images/bg_docportal_low_quality.jpg') }});">
+    <h1>Guten Tag, {{user}}👋</h1>
+    <p>In dieser Ansicht können Sie Termine verwalten.</p>
+</div>
+<div class="row">
+    {{ table("Termine der Praxis", ("ID", "Name", "Datum", "Uhrzeit", "Arzt"), appointments) }}
+</div>
+
+    <div class="row">
+    <form action="/neuer_termin" method="post">
+    <label for="date">Datum:</label>
+    <input type="date" id="date" name="date" required><br>
+
+    <label for="time">Uhrzeit:</label>
+    <input type="time" id="time" name="time" required><br>
+    <div class="">
+    <label for="vorname">Vorname:</label>
+    <input type="text" id="vorname" name="vorname" required>
+        <label for="nachname">Nachname:</label>
+    <input type="text" id="nachname" name="nachname" required><br>
+    </div>
+       <label for="doctor">Arzt:</label>
+    <select id="doctor" name="doctor" required>
+        {% for doctor in doctors %}
+        <option value="{{ doctor }}">{{ doctor }}</option>
+        {% endfor %}
+    </select>
+    <input type="submit" value="Termin hinzufügen">
+    </form>
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'app_base.html' %}
+{% from "macros/table.html" import table with context %}
+{% from "macros/title.html" import titleSelector with context %}
+{% block title %}| Dashboard{% endblock %}
+
+{% block app %}
+<div class="header element" style="background-image: url({{ url_for('static', filename='images/bg_docportal_low_quality.jpg') }});">
+    <h1>Guten Tag, {{user}}👋</h1>
+    <p>Ihre Übersicht ist für sie bereit!</p>
+</div>
+<div class="row">
+    <form action="/clinic/registerDoctor" method="post">
+    <!---
+    firstname = StringProperty(required=True)
+    lastname = StringProperty(required=True)
+    birthdate = DateProperty(required=True)
+    title = IntegerProperty(default=0)
+    sex = IntegerProperty(required=True)
+    --->
+        <h2>Neuen Arzt anlegen</h2>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="error">
+                <p>{{ messages[0] }}</p>
+            </div>
+        {% endif %}
+        {% endwith %}
+        <label for="name">Nachname</label>
+        <input type="text" name="lastname" id="lastname" required>
+        <label for="firstname">Vorname</label>
+        <input type="text" name="firstname" id="firstname" required>
+        <label for="birthdate">Geburtsdatum</label>
+        <input type="date" name="birthdate" id="birthdate" required>
+        <label for="sex">Geschlecht</label>
+        <select name="sex" id="sex">
+            <option value="">-- bitte auswählen --</option>
+            <option value="male">Männlich</option>
+            <option value="female">Weiblich</option>
+            <option value="non_binary">Nicht-binär</option>
+        </select>
+
+        {{ titleSelector() }}
+
+        <button class="btn btn-primary" type="submit">Neuen Arzt anlegen</button>
+    </form>
+</div>
+
+{% endblock %}

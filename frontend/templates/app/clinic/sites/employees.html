@@ -1,0 +1,16 @@
+{% extends 'app_base.html' %}
+{% from "macros/table.html" import table with context %}
+{% block title %}| Dashboard{% endblock %}
+
+{% block app %}
+<div class="header element" style="background-image: url({{ url_for('static', filename='images/bg_docportal_low_quality.jpg') }});">
+    <h1>Guten Tag, {{user}}👋</h1>
+    <p>Mitarbeiter und Ärzte Verwaltung</p>
+</div>
+
+<div class="row">
+    {{ table("Mitarbeiter und Ärzte", ("ID", "Vorname", "Nachname", "Rolle"), employees) }}
+</div>
+
+
+{% endblock %}

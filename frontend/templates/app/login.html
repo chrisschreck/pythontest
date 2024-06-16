@@ -1,0 +1,32 @@
+{% extends 'fullscreen_base.html' %}
+
+{% block title %}| Login{% endblock %}
+
+{% block content %}
+<div class="view" style="background-image: url({{ url_for('static', filename='images/bg_docportal_low_quality.jpg') }});">
+    <div class="form">
+        <div class="header">
+            <img src="{{ url_for('static', filename='images/icon/icon.png') }}" alt="Docportal Logo">
+            <h1>Willkommen zurück!</h1>
+        </div>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="error">
+                <p>{{ messages[0] }}</p>
+            </div>
+        {% endif %}
+        {% endwith %}
+        <form action="/login" method="post">
+            <label for="email">E-Mail Addresse</label>
+            <input type="email" name="email" id="email" placeholder="example@email.com">
+            <label for="password">Passwort</label>
+            <input type="password" name="password" id="password">
+            <div>
+                <a class="forgot" href="{{ url_for('forgot') }}">Passwort vergessen?</a>
+                <a class="forgot" href="{{ url_for('forgor') }}">Forgor?</a>
+                <input type="submit" value="Login" class="request-btn">
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

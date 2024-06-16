@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 2975.07764 3062.18359">
+  <defs>
+    <linearGradient id="b5b6a940-2679-461e-a3e7-b7247a15219a" data-name="Unbenannter Verlauf 15" x1="69.60889" y1="882.46532" x2="1720.82007" y2="882.46532" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#b4db63"/>
+      <stop offset="1" stop-color="#69d363"/>
+    </linearGradient>
+    <linearGradient id="fca94189-c989-4686-a282-20767c4881bf" x1="4612.03336" y1="2455.32641" x2="6263.24455" y2="2455.32641" gradientTransform="translate(7356.67166 4059.50815) rotate(180)" xlink:href="#b5b6a940-2679-461e-a3e7-b7247a15219a"/>
+  </defs>
+  <g id="a6a98e2b-8797-47a0-bc62-9e19dfbbc721" data-name="Ebene 2">
+    <g id="e4b1e961-7ced-45c8-9c63-e9bf5b8e9a6d" data-name="Ebene 1">
+      <path d="M69.60889,1657.76471c99.57221,5.50061,673.13577,27.62266,1149.13235-414.44118,463.5788-430.5337,519.33-1130.80463,498.39458-1138.07593-12.95129-4.498-54.61984,255.00146-234.65929,478.73769-318.29075,395.54316-900.47316,469.7693-1412.86764,452.11765" style="fill: url(#b5b6a940-2679-461e-a3e7-b7247a15219a)"/>
+    </g>
+    <g id="f7441ddc-d93c-448f-ab1f-fd41cffb8660" data-name="Ebene 2">
+      <path d="M1124.55006,866.55882c84.303-34.40185,378.31-175.06773,527.47059-498.39458C1718.34081,224.41692,1733.932,90.76019,1735.97406,0h-611.424" style="fill: #34723c"/>
+      <path d="M2744.6383,828.88235c-99.57222-5.50061-673.13577-27.62266-1149.13235,414.44118-463.5788,430.5337-519.33,1130.80463-498.39459,1138.07593,12.95129,4.498,54.61985-255.00146,234.65929-478.7377,318.29075-395.54315,900.47317-469.76929,1412.86765-452.11764" style="fill: url(#fca94189-c989-4686-a282-20767c4881bf)"/>
+      <path d="M1689.69712,2486.64706h-611.424c2.042-90.76019,17.63325-224.41692,83.9534-368.16424,149.16056-323.32685,443.16765-463.99273,527.47059-498.39458" style="fill: #34723c"/>
+      <text transform="translate(0 2986.30469) scale(1 0.7)" style="font-size: 400px;fill: #34723c;font-family: Roboto-Regular, Roboto;letter-spacing: 0.2em">DOCPO<tspan x="1725" y="0" style="letter-spacing: 0.1609375em">R</tspan><tspan x="2035.66406" y="0" style="letter-spacing: 0.161424560546875em">T</tspan><tspan x="2338.90576" y="0">AL</tspan></text>
+    </g>
+  </g>
+</svg>

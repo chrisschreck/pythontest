@@ -1,0 +1,38 @@
+{% from "macros/navcomponent.html" import nav_link with context %}
+{% macro sidebar(role) %}
+{% block additionalHead %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sidebar.css') }}">
+{% endblock %}
+{% block content %}
+<div class="sidebar">
+    <img src="{{ url_for('static', filename='images/icon/icon.png') }}" alt="Docportal Logo">
+    <div class="sidebar_content">
+        <ul>
+            {% if role == "clinic" %}
+                {{ nav_link('clinicDashboard', 'Dashboard', 'fa-solid fa-house') }}
+                {{ nav_link('clinicEmployees', 'Mitarbeiter', 'fa-solid fa-address-card') }}
+                {{ nav_link('clinicAppointments', 'Termine', 'fa-solid fa-calendar-days') }}
+                {{ nav_link('clinicPatients', 'Patienten', 'fa-solid fa-hospital-user') }}
+                {{ nav_link('clinicDocuments', 'Dokumente', 'fa-solid fa-file') }}
+                {{ nav_link('postfach', 'Postfach', 'fa-solid fa-envelope') }}
+                {{ nav_link('clinicInventory', 'Inventar', 'fa-solid fa-warehouse') }}
+                {{ nav_link('einstellungen', 'Einstellungen', 'fa-sharp fa-solid fa-gear') }}
+            {% elif role == "patient" %}
+                {{ nav_link('dashboard', 'Dashboard', 'fa-solid fa-house') }}
+                {{ nav_link('meineärzte', 'Meine Ärzte', 'fa-solid fa-stethoscope') }}
+                {{ nav_link('termine', 'Termine', 'fa-solid fa-calendar-check') }}
+                {{ nav_link('meinemedikamente', 'Medikamente', 'fa-solid fa-prescription-bottle-medical') }}
+                {{ nav_link('anamnesebogen', 'Anamnesebogen', 'fa-solid fa-file-lines') }}
+                {{ nav_link('dokumente', 'Dokumente', 'fa-solid fa-file') }}
+                {{ nav_link('postfach', 'Postfach', 'fa-solid fa-envelope') }}
+                {{ nav_link('einstellungen', 'Einstellungen', 'fa-sharp fa-solid fa-gear') }}
+            {% elif role == "doctor" %}
+                {{ nav_link('dashboard', 'Dashboard', 'fa-solid fa-house') }}
+            {% endif %}
+            {{ nav_link('help', 'Hilfe', 'fa-solid fa-circle-info') }}
+            {{ nav_link('community', 'Community', 'fa-solid fa-person') }}
+        </ul>
+    </div>
+</div>
+{% endblock %}
+{% endmacro %}

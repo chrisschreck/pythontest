@@ -1,0 +1,98 @@
+.userheader_container2 {
+    height: 4em;
+    padding: 0em 1em;
+    margin: 0;
+}
+
+.userheader2 .box2 .userimage2 {
+    position: relative;
+    min-width: 3em;
+    height: 3em;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    border: 2px solid;
+}
+
+.userheader2 .box2 {
+    display: flex;
+    color: black;
+    align-items: center;
+    width: fit-content;
+}
+
+.userheader2 .box2 .userimage2 img {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.test {
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.Platzhalter {
+    max-height: 200px;
+    border-radius: 1.8em;
+}
+
+.map {
+    width: 100%;
+}
+
+.date-input {
+    display: inline-block;
+    position: relative;
+}
+
+.date-input input[type="date"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 200px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.date-input::before {
+    content: '\f073';
+    font-family: FontAwesome;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: #aaa;
+}
+
+.time-input {
+    display: inline-block;
+    position: relative;
+}
+
+.time-input input[type="time"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 150px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.time-input::before {
+    content: '\f017';
+    font-family: FontAwesome;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: #aaa;
+}

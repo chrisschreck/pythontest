@@ -1,0 +1,61 @@
+{% extends 'app_base.html' %}
+{% from "macros/table.html" import table with context %}
+{% block title %}| Dashboard{% endblock %}
+
+{% block app %}
+<div class="header element" style="background-image: url({{ url_for('static', filename='images/bg_docportal_low_quality.jpg') }});">
+    <h1>Guten Tag, {{user}}👋</h1>
+    <p>Verwalten Sie ihre Dokumente.</p>
+</div>
+<div class="upload_file">
+    <form action="/uploadfile" method="post" enctype="multipart/form-data">
+        <label for="patient">Patient:</label>
+        <select id="patient" name="patient">
+            <option value="1">Patient 1</option>
+            <option value="2">Patient 2</option>
+            <option value="3">Patient 3</option>
+            <option value="4">Patient 4</option>
+            <option value="5">Patient 5</option>
+        </select>
+        <label for="filecollection">Art des Dokuments:</label>
+        <select id="filecollection" name="collection">
+            <option value="Billing_documents">Rechnungsunterlagen</option>
+        </select>
+
+        <label for="file">Datei auswählen:</label>
+        <input type="file" id="file" name="file" accept=".pdf, .doc, .docx, .txt">
+
+        <button type="submit">Formular absenden</button>
+    </form>
+</div>
+<div class="row document_area">
+    <div class="content_box element">
+        <h3 class="tableheader">Meine Dokumente</h3><hr>
+        <table>
+            <thead>
+              <tr>
+                <th>Dokument</th>
+                <th>Beschreibung</th>
+                <th>Download</th>
+                  <th>Teilen</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Vertragsentwurf</td>
+                <td>Dies ist der Entwurf für den neuen Vertrag.</td>
+                <td><a href="vertragsentwurf.docx" download><i class="fa-solid fa-download"></i></a></td>
+                <td><a href="#"><i class="fa-solid fa-share"></i></a></td>
+              </tr>
+              <tr>
+                <td>Präsentation</td>
+                <td>Hier ist die aktuelle Präsentation für das Projekt.</td>
+                <td><a href="präsentation.pptx" download><i class="fa-solid fa-download"></i></a></td>
+                <td><a href="#"><i class="fa-solid fa-share"></i></a></td>
+              </tr>
+              <!-- Weitere Dokumente hier einfügen -->
+            </tbody>
+          </table>
+    </div>
+</div>
+{% endblock %}

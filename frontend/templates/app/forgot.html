@@ -1,0 +1,25 @@
+{% extends 'fullscreen_base.html' %}
+
+{% block title %}| Login{% endblock %}
+
+{% block content %}
+<div class="view" style="background-image: url({{ url_for('static', filename='images/bg_docportal_low_quality.jpg') }});">
+    <div class="form">
+        <h1>Passwort vergessen</h1>
+        <form action="/forgot" method="post">
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="error">
+                    <p>{{ messages[0] }}</p>
+                </div>
+            {% endif %}
+            {% endwith %}
+            <label for="email">E-Mail Addresse</label>
+            <input type="email" name="email" id="email" placeholder="example@email.com">
+            <div>
+                <input type="submit" value="Reset E-Mail erhalten" class="request-btn">
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

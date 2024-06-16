@@ -1,0 +1,26 @@
+{% from "macros/navcomponent.html" import nav_link with context %}
+{% macro nav() %}
+<div class="nav">
+    <ul>
+        <li onclick="location.href='/'"><img src="{{ url_for('static', filename='images/icon/icon.png') }}" alt="Docportal Logo"></li>
+        {{ nav_link('about', 'Über Uns') }}
+        {{ nav_link('features', 'Funktionen') }}
+        {{ nav_link('team', 'Das Team') }}
+        {{ nav_link('help', 'Kontakt') }}
+        {% if user %}
+            <div class="buttons">
+                {% if role == "patient" or role == "doctor" %}
+                    {{ nav_link('dashboard', 'Dashboard') }}
+                {% elif role == "clinic" %}
+                    {{ nav_link('clinicDashboard', 'Dashboard') }}
+                {% endif %}
+            </div>
+        {% else %}
+            <div class="buttons">
+                {{ nav_link('login', 'Einloggen') }}
+                {{ nav_link('registerProd', 'Registrieren') }}
+            </div>
+        {% endif %}
+    </ul>
+</div>
+{% endmacro %}

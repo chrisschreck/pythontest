@@ -1,0 +1,24 @@
+{% extends 'fullscreen_base.html' %}
+
+{% block title %}| Login{% endblock %}
+
+{% block content %}
+<div class="view" style="background-image: url({{ url_for('static', filename='images/bg_docportal_low_quality.jpg') }});">
+    <div class="form">
+        <div class="header">
+            <img src="{{ url_for('static', filename='images/icon/icon.png') }}" alt="Docportal Logo">
+            <h1>Zurzeit können Sie sich noch nicht registrieren</h1>
+        </div>
+        <p>Wenn Sie informiert werden möchten, sobald die App zur Verfügung steht, finden Sie hier bald die Einschreibung für unseren Newsletter.</p>
+        <p>Schauen Sie sich aber gerne weiter um!</p>
+        <a onclick="location.href='/'">Klicken Sie hier um zurück zu gelangen.</a>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="error">
+                <p>{{ messages[0] }}</p>
+            </div>
+        {% endif %}
+        {% endwith %}
+    </div>
+</div>
+{% endblock %}

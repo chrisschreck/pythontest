@@ -1,0 +1,12 @@
+{% macro faq_element(question, answer) %}
+    <div class="faq-element">
+        <div class="row">
+            <p class="faq-question">{{ question }}</p>
+            <i class="fa-icon fa-solid fa-angle-down fa-xl"></i>
+        </div>
+        <div class="faq-question-content">
+            <p>{{ answer }}</p>
+        </div>
+    </div>
+    <hr>
+{% endmacro %}

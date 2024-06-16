@@ -1,0 +1,84 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.view {
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
+}
+
+.view .form {
+    display: flex;
+    width: 40%;
+    height: auto;
+    padding: 0 1em;
+    margin: 0;
+    background-color: var(--palette-space-cadet);
+    color: white;
+    position: relative;
+    top: 20vh;
+    left: 10vw;
+    border-radius: 1em;
+    box-shadow: -2em 1em 2em var(--palette-light-blue);
+    flex-direction: column;
+}
+
+.view .form .header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+}
+
+.view .form .header h1 {
+    padding: 0 1em;
+}
+
+.view .form .header img {
+    width: 3em;
+    height: 3em;
+}
+
+.view .form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.view .form form input, .view .form form select {
+    margin: 1em 0;
+    padding: 0 1em;
+    height: 2em;
+    border-style: none;
+    border-radius: 2em;
+}
+
+.view .form form input.request-btn {
+    background-color: var(--palette-light-blue);
+    padding: 0.5em 1em;
+    color: white;
+}
+
+.view .form form div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.view .form form div a {
+    color: gray;
+    transition: 0.3s ease-in;
+}
+
+.view .form form div a:hover {
+    color: blue;
+}
+
+.view .form .agb input {
+    width: 2em;
+    height: 2em;
+    margin: 0 1em 0 0;
+}

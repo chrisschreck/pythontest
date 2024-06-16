@@ -1,0 +1,12 @@
+{% macro prc_element(title, content) %}
+    <div class="prc-element">
+        <h3 class="tableheader">{{ title }}</h3>
+        <hr>
+        <div class="prc-content">
+            {% for paragraph in content %}
+                <p>{{ paragraph }}</p>
+            {% endfor %}
+        </div>
+    </div>
+{% endmacro %}
+

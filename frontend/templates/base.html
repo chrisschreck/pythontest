@@ -1,0 +1,48 @@
+<!doctype html>
+<html class="no-js" lang="de">
+
+<head>
+  <meta charset="utf-8">
+  <title>Docportal {% block title %}{% endblock %}</title>
+  <meta name="description" content="Auf dieser Website können sie ihre ärtztlichen Angelegenheiten an einem Ort vereinen.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="Docportal, Arzt, Ärzte, Arztportal, Ärzteportal, Doktorportal, Doktor">
+  <meta name="copyright"content="itbt.org">
+  <meta name="author" content="Leon Prinz, leon.prinz@ba-rm.de">
+  <meta name="owner" content="Leon Prinz">
+  <meta name="distribution" content="Expilicit to Berufsakademie and itbt.org">
+  <meta name="pagename" content="Docportal">
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta content="yes" name="apple-touch-fullscreen">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no">
+
+  <meta property="og:title" content="Docportal">
+  <meta property="og:type" content="Website">
+  <meta property="og:url" content="docportal.itbt.org">
+  <meta property="og:image" content="{{ url_for('static', filename='images/icon/favicon.ico') }}">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" href="{{ url_for('static', filename='images/icon/favicon.ico') }}" sizes="any">
+  <link rel="icon" href="{{ url_for('static', filename='images/icon/icon.svg') }}" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="{{ url_for('static', filename='images/icon/icon.png') }}">
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/additionaldefaults.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+  {% block additionalHead %}
+  {% endblock %}
+
+  <link rel="manifest" href="{{ url_for('static', filename='site.webmanifest') }}">
+</head>
+<body>
+  {% block content %}
+  {% endblock %}
+  {% block additionalBody %}
+  {% endblock %}
+</body>
+</html>

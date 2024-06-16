@@ -1,0 +1,41 @@
+{% extends 'fullscreen_base.html' %}
+
+{% block title %}| Arzt registrieren{% endblock %}
+
+{% block content %}
+<div class="view" style="background-image: url({{ url_for('static', filename='images/bg_docportal_low_quality.jpg') }});">
+    <div class="form">
+        <div class="header">
+            <img src="{{ url_for('static', filename='images/icon/icon.png') }}" alt="Docportal Logo">
+            <h1>Registrieren sie sich als Arzt</h1>
+        </div>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="error">
+                <p>{{ messages[0] }}</p>
+            </div>
+        {% endif %}
+        {% endwith %}
+        <form action="/doctor/register" method="post">
+            <label for="uid">Sicherheitscode</label>
+            <input type="text" name="uid" id="uid" required>
+
+            <label for="email">E-Mail Addresse</label>
+            <input type="email" name="email" id="email" placeholder="example@email.com" required>
+
+            <label for="pwd">Passwort</label>
+            <input type="password" name="pwd" id="pwd" minlength="8" required>
+
+            <label for="pwd2">Passwort wiederholen</label>
+            <input type="password" name="pwd2" id="pwd2" minlength="8" required>
+
+            <div class="agb">
+                <input type="checkbox" name="agb" id="agb" required>
+                <label for="agb">Ich akzeptiere die Nutzungsbedingungen und AGB von DocPortal</label>
+            </div>
+
+            <input type="submit" value="Registrieren" class="request-btn">
+        </form>
+    </div>
+</div>
+{% endblock %}

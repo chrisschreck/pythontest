@@ -1,0 +1,56 @@
+{% extends 'lobby_base.html' %}
+{% from "macros/prc.html" import prc_element with context %}
+{% block title %}{% endblock %}
+{% block content %}
+
+    <div class="faq">
+        <div class="prc-header">
+            <div class="faq-row">
+                <div class="faq-column faq-header-content">
+                    <h3>Text 1</h3>
+            <p class="no-margin">
+               Entdecken Sie hier Antworten auf häufig gestellte Fragen rund um unsere Plattform,
+               die darauf ausgerichtet ist, Arztkliniken und Patientenakten zu digitalisieren.
+               Wir möchten Ihnen helfen, ein besseres Verständnis für die Vorteile,
+               die Sicherheit und die Funktionalitäten unserer Lösung zu gewinnen.
+            </p>
+        <h3>Text 2</h3>
+            <p class="no-margin">
+               Entdecken Sie hier Antworten auf häufig gestellte Fragen rund um unsere Plattform,
+               die darauf ausgerichtet ist, Arztkliniken und Patientenakten zu digitalisieren.
+               Wir möchten Ihnen helfen, ein besseres Verständnis für die Vorteile,
+               die Sicherheit und die Funktionalitäten unserer Lösung zu gewinnen.
+            </p>
+        <h3>Text 3</h3>
+            <p class="no-margin">
+               Entdecken Sie hier Antworten auf häufig gestellte Fragen rund um unsere Plattform,
+               die darauf ausgerichtet ist, Arztkliniken und Patientenakten zu digitalisieren.
+               Wir möchten Ihnen helfen, ein besseres Verständnis für die Vorteile,
+               die Sicherheit und die Funktionalitäten unserer Lösung zu gewinnen.
+            </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="prc">
+        <div class="faq-header">
+            <div class="prc-row">
+                {{ prc_element("Angebot 1", [
+                    "Lirum larum löffelstil, ich wasche alles mit persil",
+                    "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
+                ]) }}
+
+                {{ prc_element("Angebot 2", [
+                    "Lirum larum löffelstil, ich wasche alles mit persil",
+                    "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
+                ]) }}
+
+                {{ prc_element("Angebot 3", [
+                    "Lirum larum löffelstil, ich wasche alles mit persil",
+                    "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
+                ]) }}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

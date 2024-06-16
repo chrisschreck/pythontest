@@ -1,0 +1,77 @@
+{% extends 'fullscreen_base.html' %}
+
+{% block title %}| Login{% endblock %}
+
+{% block content %}
+<div class="view" style="background-image: url({{ url_for('static', filename='images/bg_docportal_low_quality.jpg') }});">
+    <div class="form">
+        <div class="header">
+            <img src="{{ url_for('static', filename='images/icon/icon.png') }}" alt="Docportal Logo">
+            <h1>Registrieren</h1>
+        </div>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="error">
+                <p>{{ messages[0] }}</p>
+            </div>
+        {% endif %}
+        {% endwith %}
+        <form action="/register" method="post">
+            <label for="email">E-Mail Addresse</label>
+            <input type="email" name="email" id="email" placeholder="example@email.com" required>
+
+            <label for="role">Deine Rolle</label>
+            <select name="role" id="role">
+                <option value="">-- bitte auswählen --</option>
+                <option value="doctor">Doktor</option>
+                <option value="patient">Patient</option>
+            </select>
+
+            <label for="pwd">Passwort</label>
+            <input type="password" name="pwd" id="pwd" minlength="8" required>
+
+            <label for="pwd2">Passwort wiederholen</label>
+            <input type="password" name="pwd2" id="pwd2" minlength="8" required>
+
+            <label for="firstname">Vorname</label>
+            <input type="text" name="firstname" id="firstname" required>
+
+            <label for="lastname">Nachname</label>
+            <input type="text" name="lastname" id="lastname" required>
+
+            <label for="birthdate">Geburtsdatum</label>
+            <input type="date" name="birthdate" id="birthdate" required>
+
+            <label for="sex">Geschlecht</label>
+            <select name="sex" id="sex">
+                <option value="">-- bitte auswählen --</option>
+                <option value="male">Männlich</option>
+                <option value="female">Weiblich</option>
+                <option value="non_binary">Nicht-binär</option>
+            </select>
+
+            <label for="title">Titel</label>
+            <select name="title" id="title">
+                <option value="BLANC"> </option>
+                <option value="DOCTOR">Dr. </option>
+                <option value="PROFESSOR">Prof. </option>
+                <option value="PROF_DOC">Prof. Dr. </option>
+                <option value="DIPLOMA">DIPLOMA</option>
+                <option value="BACHELOR">BACHELOR</option>
+                <option value="MASTER">MASTER</option>
+                <option value="MAGISTER">MAGISTER</option>
+            </select>
+
+            <label for="phone">Telefonnummer</label>
+            <input type="tel" name="phone" id="phone" required>
+
+            <div class="agb">
+                <input type="checkbox" name="agb" id="agb" required>
+                <label for="agb">Ich akzeptiere die Nutzungsbedingungen und AGB von DocPortal</label>
+            </div>
+
+            <input type="submit" value="Registrieren" class="request-btn">
+        </form>
+    </div>
+</div>
+{% endblock %}

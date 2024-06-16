@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --palette-green: #34723c;
+    --palette-light-green: #b4db63;
+    --palette-space-cadet: #1f2041;
+    --palette-violet: #4b3f72;
+    --palette-blue: #19647e;
+    --palette-accent: #9eb7e5;
+    --palette-light-blue: #648de5;
+    --palette-blue: #304c89;
+    --pallett-white: #FFFFFF;
+    --pallett-gray: #F2F2F2F2;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+hr {
+    width: 100%;
+    border-top: 1px solid #bbb;
+}

@@ -1,0 +1,15 @@
+{% macro nav_link(endpoint, text, icon) %}
+{% if request.endpoint.endswith(endpoint) %}
+    {% if icon %}
+    <li class="active" onclick="location.href = '{{ url_for(endpoint) }}';"><i class="{{icon}}"></i><a>{{text}}</a></li>
+    {% else %}
+    <li class="active" onclick="location.href = '{{ url_for(endpoint) }}';"><a>{{text}}</a></li>
+    {% endif %}
+{% else %}
+    {% if icon %}
+        <li onclick="location.href = '{{ url_for(endpoint) }}';"><i class="{{icon}}"></i><a>{{text}}</a></li>
+    {% else %}
+        <li onclick="location.href = '{{ url_for(endpoint) }}';"><a>{{text}}</a></li>
+    {% endif %}
+{% endif %}
+{% endmacro %}

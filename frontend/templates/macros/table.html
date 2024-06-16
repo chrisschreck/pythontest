@@ -1,0 +1,65 @@
+{% macro table(title, headers, data) %}
+    <div class="table element">
+        <h3 class="tableheader">{{ title }}</h3><hr>
+        <table>
+            <thead>
+                <tr>
+                    {% for header in headers %}
+                        <th>{{ header }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in data %}
+                    <tr>
+                        {% for td in row %}
+                            {% if td is mapping %}
+                                {% if td.input is defined %}
+                                    {% if td.input == "select" %}
+                                        <td><select name="{{ td.name }}">
+                                            {% for option in td.options %}
+                                                <option value="{{ option.value }}">{{ option.text }}</option>
+                                            {% endfor %}
+                                        </select></td>
+                                    {% endif %}
+                                    {% if td.input == "checkbox" %}
+                                        <td><input type="checkbox" name="{{ td.name }}" value="{{ td.value }}"></td>
+                                    {% endif %}
+                                    {% if td.input == "radio" %}
+                                        <td><input type="radio" name="{{ td.name }}" value="{{ td.value }}"></td>
+                                    {% endif %}
+                                    {% if td.input == "text" %}
+                                        {% if td.placeholder is defined %}
+                                            <td><input type="text" name="{{ td.name }}" value="{{ td.value }}" placeholder="{{ td.placeholder }}"></td>
+                                        {% else %}
+                                            <td><input type="text" name="{{ td.name }}" value="{{ td.value }}"></td>
+                                        {% endif %}
+                                    {% endif %}
+                                    {% if td.input == "textarea" %}
+                                        {% if td.placeholder is defined %}
+                                            <td><textarea name="{{ td.name }}" placeholder="{{ td.placeholder }}">{{ td.value }}</textarea></td>
+                                        {% else %}
+                                            <td><textarea name="{{ td.name }}">{{ td.value }}</textarea></td>
+                                        {% endif %}
+                                    {% endif %}
+                                {% elif td.a is defined %}
+                                    {% if td.icon is defined %}
+                                        <td><a href="{{ td.value }}"><i class="{{ td.icon }}"></i></a></td>
+                                    {% else %}
+                                        <td><a href="{{ td.value }}">{{ td.name }}</a></td>
+                                    {% endif %}
+                                {% elif td.type is defined %}
+                                    <td><input type="{{ td.type }}" name="{{ td.name }}" value="{{ td.value }}"></td>
+                                {% else %}
+                                    <td>{{ td.value }}</td>
+                                {% endif %}
+                            {% else %}
+                                <td>{{ td }}</td>
+                            {% endif %}
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endmacro %}

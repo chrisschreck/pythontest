@@ -1,0 +1,28 @@
+{% extends 'app_base.html' %}
+{% from "macros/table.html" import table with context %}
+{% block title %}| Dashboard{% endblock %}
+
+{% block app %}
+<div class="header element" style="background-image: url({{ url_for('static', filename='images/bg_docportal_low_quality.jpg') }});">
+    <h1>Guten Tag, {{user}}👋</h1>
+    <p>Ihre Übersicht ist für sie bereit!</p>
+</div>
+<div class="row">
+    {% set table_title = "Anstehende Termine" %}
+    {% set table_headers = ("Name", "Art", "Datum") %}
+    {% set table_data = [("Datenbank 1", "Art 1", "Datum 1"),
+                         ("Datenbank 2", "Art 2", "Datum 2"),
+                         ("Datenbank 3", "Art 3", "Datum 3")] %}
+
+    {{ table(table_title, table_headers, table_data) }}
+
+    {% set table_title = "Erhaltene Dokumente" %}
+    {% set table_headers = ("Name", "Art", "Datum", "Doktor") %}
+    {% set table_data = [("Datenbank 1", "Art 1", "Datum 1", "Doktor 1"),
+                         ("Datenbank 2", "Art 2", "Datum 2", "Doktor 2"),
+                         ("Datenbank 3", "Art 3", "Datum 3", "Doktor 3")] %}
+
+    {{ table(table_title, table_headers, table_data) }}
+</div>
+
+{% endblock %}

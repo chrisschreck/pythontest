@@ -1,0 +1,30 @@
+{% macro userheader() %}
+    {% block content %}
+        <div class="userheader_container">
+            <div class="userheader">
+                <div class="box">
+                    <div class="userimage">
+                        <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar" class="avatar">
+                    </div>
+                    <h3>{{ user }}</h3>
+                    <div class="menu">
+                    </div>
+                </div>
+                <ul class="usermenu">
+                    <li><a href="#">Profil</a></li>
+                    <li><a href="#">Einstellungen</a></li>
+                    <li><a href="{{ url_for('logout') }}">Abmelden</a></li>
+                </ul>
+            </div>
+        </div>
+    {% endblock %}
+
+    {% block additionalHead %}
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/userheader.css') }}">
+        <script src="https://kit.fontawesome.com/628a9ab23a.js" crossorigin="anonymous"></script>
+    {% endblock %}
+
+    {% block additionalBody %}
+        <script src="../static/js/userheader.js"></script>
+    {% endblock %}
+{% endmacro %}

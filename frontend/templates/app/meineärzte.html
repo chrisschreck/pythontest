@@ -1,0 +1,94 @@
+{% extends 'app_base.html' %}
+{% block title %}| Meine Ärzte{% endblock %}
+{% block app %}
+<div class="header element" style="background-image: url({{ url_for('static', filename='images/bg_docportal_low_quality.jpg') }});">
+    <h1>{{user}}, hier ihre Übersicht:</h1>
+    <p>Machen sie hier ihren Wunschtermin aus!</p>
+</div>
+<div class="row">
+    <div class="content_box element">
+        <h3 class="tableheader">Meine Ärzte</h3><hr>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Auswahl</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Hier muss Datenbank</td>
+                    <td><input type="radio" name="med"></td>
+                </tr>
+                <tr>
+                    <td>Hier muss Datenbank</td>
+                    <td><input type="radio" name="med"></td>
+                </tr>
+                <tr>
+                    <td>Hier muss Datenbank</td>
+                    <td><input type="radio" name="med"></td>
+                </tr>
+                <tr>
+                    <td>Hier muss Datenbank</td>
+                    <td><input type="radio" name="med"></td>
+                </tr>
+                <tr>
+                    <td>Hier muss Datenbank</td>
+                    <td><input type="radio" name="med"></td>
+                </tr>
+                <tr>
+                    <td>Hier muss Datenbank</td>
+                    <td><input type="radio" name="med"></td>
+                </tr>
+                <tr>
+                    <td>Hier muss Datenbank</td>
+                    <td><input type="radio" name="med"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="content_box element">
+    <div class="userheader_container2">
+         <div class="userheader2">
+             <div class="box2">
+                 <div class="userimage2">
+                     <img src="https://th.bing.com/th/id/R.9eb7cef4beecf6b9c7d6e4d0ae43483a?rik=pvTfuK3axcL1QA&pid=ImgRaw&r=0" alt="Avatar" class="avatar">
+                 </div>
+                 <h3 class ="doctorheader">Dr. Markus Schneider</h3>
+             </div><hr>
+         </div>
+    </div>
+        <tbody class="Test">
+            <img src="https://th.bing.com/th/id/OIP.rn7PEJXOJEwsQLSVLnaTaQHaFj?pid=ImgDet&rs=1" alt="Platzhalter" class="Platzhalter">
+                <h3>Hauptstraße 34</h3>
+                    <tr>
+                        <td>60528 Frankfurt</td>
+                    </tr>
+                <p>Lorem ipsum dolor sit Lorem ipsum dolor sit amet, consetetur sadipscing elitr tua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata </p>
+        </tbody>
+    </div>
+</div>
+<div class="row">
+    <div class="content_box element">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2565.9248361730265!2d8.80375171090035!3d49.97526812134672!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bd6cf65eb67ae5%3A0xced2a6fbe719d3eb!2sBerufsakademie%20Rhein-Main!5e0!3m2!1sen!2sde!4v1686841761757!5m2!1sen!2sde" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map"></iframe>
+    </div>
+</div>
+<div class="row">
+    <div class="content_box element">
+        <h1>Datum</h1>
+            <div class="date-input">
+                <input type="date">
+            </div>
+        <script> src="https://kit.fontawesome.com/your-font-awesome-kit.js%22%3E</script>
+    </div>
+    <div class="content_box element">
+        <h1>Uhrzeit</h1>
+            <div class="time-input">
+                <input type="time">
+                <button type="submit">Terminauswahl</button>
+            </div>
+        <script> src="https://kit.fontawesome.com/your-font-awesome-kit.js%22%3E</script>
+    </div>
+<div>
+{% endblock %}

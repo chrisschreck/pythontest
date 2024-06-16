@@ -1,0 +1,44 @@
+{% extends 'lobby_base.html' %}
+{% from 'macros/faq.html' import faq_element with context %}
+{% block title %}{% endblock %}
+{% block content %}
+    <div class="faq">
+        <div class="faq-header">
+            <div class="faq-row">
+                <div class="faq-column faq-header-content">
+                    <h1>FAQs</h1>
+                    <p>
+                       Entdecken Sie hier Antworten auf häufig gestellte Fragen rund um unsere Plattform,
+                       die darauf ausgerichtet ist, Arztkliniken und Patientenakten zu digitalisieren.
+                       Wir möchten Ihnen helfen, ein besseres Verständnis für die Vorteile,
+                       die Sicherheit und die Funktionalitäten unserer Lösung zu gewinnen.
+                    </p>
+                </div>
+                <img src="{{ url_for('static', filename='images/faq.png') }}" alt="FAQ Header">
+            </div>
+        </div>
+        <div class="faq-content">
+            {{ faq_element("Frage 1: Warum ist die Digitalisierung von Patientenakten wichtig?",
+                                  "Antwort: Die Digitalisierung von Patientenakten ermöglicht einen sicheren und effizienten Zugriff auf medizinische Daten. Dadurch wird die Genauigkeit der Diagnosen verbessert, die Behandlungszeiten verkürzt und die Patientenversorgung optimiert.") }}
+
+            {{ faq_element("Frage 2: Ist die Sicherheit meiner sensiblen Gesundheitsdaten gewährleistet?",
+                                  "Antwort: Ja, Datenschutz und -sicherheit haben für uns höchste Priorität. Wir verwenden modernste Verschlüsselungstechnologien und strenge Sicherheitsmaßnahmen, um die Vertraulichkeit Ihrer Daten zu gewährleisten und alle geltenden Datenschutzbestimmungen einzuhalten.") }}
+
+            {{ faq_element("Frage 3: Welche Vorteile bietet die Plattform für Arztkliniken?",
+                           "Antwort: Unsere Plattform erleichtert die Verwaltung von Patientenakten, verbessert die Koordination zwischen verschiedenen Abteilungen und ermöglicht einen nahtlosen Informationsaustausch. Dies führt zu einer Steigerung der Effizienz und einer verbesserten Patientenversorgung.") }}
+
+            {{ faq_element("Frage 4: Kann die Plattform mit bestehenden Systemen integriert werden?",
+                           "Antwort: Ja, unsere Lösung wurde entwickelt, um nahtlos mit verschiedenen bestehenden Systemen zu integrieren. Wir bieten Unterstützung und Beratung, um einen reibungslosen Übergang zu gewährleisten.") }}
+
+            {{ faq_element("Frage 5: Wie einfach ist die Bedienung der Plattform?",
+                           "Antwort: Unsere Plattform wurde benutzerfreundlich gestaltet, mit einer intuitiven Benutzeroberfläche, um die Nutzung für das Personal in Arztkliniken zu erleichtern. Wir bieten Schulungen und Support, um sicherzustellen, dass alle Benutzer die Plattform effektiv nutzen können.") }}
+
+            {{ faq_element("Frage 6: Werden Schulungen oder Unterstützung bei der Implementierung angeboten?",
+                           "Antwort: Ja, wir bieten Schulungen und umfassende Unterstützung für das Personal während der Implementierungsphase an. Unser Team steht bereit, um Fragen zu beantworten und bei der Anpassung an die Plattform zu helfen.") }}
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/accordion.js') }}"></script>
+
+
+{% endblock %}

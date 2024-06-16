@@ -1,0 +1,58 @@
+{% extends 'app_base.html' %}
+{% from 'macros/table.html' import table with context %}
+{% block title %}| Meine Ärzte{% endblock %}
+
+{% block app %}
+    <div class="header element" style="background-image: url({{ url_for('static', filename='images/bg_docportal_low_quality.jpg') }});">
+        <h1>Guten Tag, {{user}}👋</h1>
+        <p>Ihre Übersicht ist für sie bereit!</p>
+    </div>
+    <div class="row">
+            {{ table("Meine Mediakmente", ["Name", "Arzt", "Einnahme", "Auswahl"], [
+                    ["Medikament 1", "Dr. Markus Schneider", "3x täglich", {"input": "radio", "name": "med", "value": "1"}],
+                    ["Medikament 2", "Dr. Markus Schneider", "3x täglich", {"input": "radio", "name": "med", "value": "2"}],
+                    ["Medikament 3", "Dr. Markus Schneider", "3x täglich", {"input": "radio", "name": "med", "value": "3"}],
+                    ["Medikament 4", "Dr. Markus Schneider", "3x täglich", {"input": "radio", "name": "med", "value": "4"}],
+                    ["Medikament 5", "Dr. Markus Schneider", "3x täglich", {"input": "radio", "name": "med", "value": "5"}],
+                    ]
+                )}}
+    </div>
+    <div class="row">
+        <div class="content_box element">
+            <h3 class="tableheader">Hinweise</h3><hr>
+            <p>Lirum larum löffelstil, ich wasche alles mit persil</p>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+                et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+                rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+                dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div class="content_box element">
+        <div class="userheader_container2">
+             <div class="userheader2">
+                 <div class="box2">
+                     <div class="userimage2">
+                         <img src="https://th.bing.com/th/id/R.9eb7cef4beecf6b9c7d6e4d0ae43483a?rik=pvTfuK3axcL1QA&pid=ImgRaw&r=0" alt="Avatar" class="avatar">
+                     </div>
+                     <h3 class ="tableheader">Dr.Markus Schneider</h3>
+                 </div><hr>
+             </div>
+        </div>
+            <tbody class="Test">
+                <img src="https://th.bing.com/th/id/OIP.rn7PEJXOJEwsQLSVLnaTaQHaFj?pid=ImgDet&rs=1" alt="Platzhalter" class="Platzhalter">
+                    <h3>Hauptstraße 34</h3>
+                        <tr>
+                            <td>60528 Frankfurt</td>
+                        </tr>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+            </tbody>
+        </div>
+    </div>-
+    <div class="row">
+        <div class="content_box element">
+            <h3 class="tableheader">Bestellungen  <input type="submit" value="Neues Rezept"> </h3><hr>
+        </div>
+    </div>
+
+{% endblock %}
